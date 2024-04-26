@@ -28,7 +28,7 @@ export function toggleMusic() {
 
     if(state.isMute) {
         sounds.bgAudio.play();
-        return
+        return;
     }
 
     sounds.bgAudio.pause();
