@@ -14,3 +14,21 @@ export const Container = styled.div`
 
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 `;
+
+export const Add = styled.div`
+    width: 100%;
+
+    padding: 50px 123px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+    `;
+
+export const AddButton = styled.div`
+    width: 200px;
+`;
+
+export const Movies = styled.div``;

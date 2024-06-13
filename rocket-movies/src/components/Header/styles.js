@@ -10,6 +10,8 @@ export const Container = styled.header`
 
     padding: 42px 123px;
 
+    border-bottom: 1px solid ${({ theme }) => theme.COLORS.GRAY_800};
+
     > h1 {
         color: ${({ theme }) => theme.COLORS.CORAL};
         font-size: 24px;
@@ -27,6 +29,7 @@ export const Profile = styled.div`
 
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 
     > div {
         display: flex;
