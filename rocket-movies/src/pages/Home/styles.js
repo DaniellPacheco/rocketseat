@@ -13,6 +13,7 @@ export const Container = styled.div`
     ;
 
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+    
 `;
 
 export const Add = styled.div`
@@ -31,4 +32,25 @@ export const AddButton = styled.div`
     width: 200px;
 `;
 
-export const Movies = styled.div``;
+export const Movies = styled.div`
+    width: 100%;
+
+    padding: 50px 123px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    overflow-y: auto;
+
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: ${({ theme }) => theme.COLORS.CORAL};; 
+        border-radius: 10px;
+    }
+`;
