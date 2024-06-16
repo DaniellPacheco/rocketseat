@@ -5,6 +5,7 @@ export function ButtonTitle({title, icon: Icon, ...rest}) {
         <Container 
             type="button"
             {...rest}
+            to="/"
         >
             {Icon && <Icon size={20} />}
             {title}

@@ -1,4 +1,4 @@
-import { Container, Tags } from "./styles";
+import { Container,Title, Tags } from "./styles";
 
 import { Stars } from "../Stars";
 
@@ -31,7 +31,8 @@ export function Movie() {
 
     return (
         <Container>
-            <h2>Interestellar</h2>
+            {/* <h2>Interestellar</h2> */}
+            <Title to="preview/1">Interestellar</Title>
             <Stars />
 
             <TextWithLimit text={movieText} limit="282" />

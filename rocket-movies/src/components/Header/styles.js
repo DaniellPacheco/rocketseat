@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.header`
@@ -23,7 +24,7 @@ export const Search = styled.div`
     margin: 0 100px;
 `;
 
-export const Profile = styled.div`
+export const Profile = styled(Link)`
     width: 100%;
     max-width: 220px;
 

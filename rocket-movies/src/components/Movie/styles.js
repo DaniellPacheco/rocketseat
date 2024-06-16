@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -19,6 +20,15 @@ export const Container = styled.div`
         font-size: 24px;
     }
 
+`;
+
+export const Title = styled(Link)`
+    text-decoration: none;
+
+    color: ${({ theme }) => theme.COLORS.WHITE};
+    font-weight: bold;
+
+    font-size: 24px;
 `;
 
 export const Tags = styled.div`
