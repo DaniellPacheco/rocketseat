@@ -52,6 +52,9 @@ export const Profile = styled.div`
     > img {
         width: 64px;
         height: 64px;
+        
+        border: 1px solid ${({ theme }) => theme.COLORS.GRAY_800};
+
         border-radius: 50%;
     }
 

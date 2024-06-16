@@ -9,6 +9,8 @@ export const Container = styled.div`
     color: ${({ theme }) => theme.COLORS.CORAL};
     font-size: 16px;
 
+    cursor: pointer;
+
     > svg {
         margin-right: 5px;
         width: 16px;

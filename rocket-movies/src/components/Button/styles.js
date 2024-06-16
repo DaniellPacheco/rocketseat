@@ -8,8 +8,8 @@ export const Container = styled.button`
     align-items: center;
     justify-content: center;
     
-    background-color: ${({ theme }) => theme.COLORS.CORAL};
-    color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+    background-color: ${({ theme, deleteBtn }) => deleteBtn ? theme.COLORS.BLACK : theme.COLORS.CORAL};
+    color: ${({ theme, deleteBtn }) => deleteBtn ? theme.COLORS.CORAL : theme.COLORS.BACKGROUND_800};
     border: none;
     font-weight: 600;
 

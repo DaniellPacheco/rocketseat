@@ -7,6 +7,7 @@ export default {
         WHITE: "#F4EDE8",
         CORAL: "#FF859B",
         CORAL_OPACITY: "rgba(255, 133, 155, 0.05)",
+        BLACK: "#0D0C0F",
 
         GRAY_800: "#3E3B47",
         GRAY_300: "#948F99",

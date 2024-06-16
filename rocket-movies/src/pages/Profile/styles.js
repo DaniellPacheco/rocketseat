@@ -1,31 +1,41 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
     width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
     > header {
         width: 100%;
         height: 144px;
 
-        background: ${({ theme }) => theme.COLORS.BACKGROUND_900};
-
         display: flex;
         align-items: center;
-
-        padding: 0 124px;
-
-        svg {
-            color: ${({ theme }) => theme.COLORS.GRAY_100};
-            font-size: 24px;
-        }
+        
+        padding: 63px 144px;
+        
+        background-color: ${({ theme }) => theme.COLORS.CORAL_OPACITY};
+        
     }
 `;
 
-export const Form = styled.form`
+export const Form = styled.div`
     max-width: 340px;
-    margin: -84px auto 0;
+    margin: -93px auto 0;
 
-    > div:nth-child(4) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    > div:nth-child(4),
+    > button
+     {
         margin-top: 24px;
     }
 `;
@@ -36,10 +46,11 @@ export const Avatar = styled.div`
 
     width: 186px;
     height: 186px;
-    
+
     > img {
         width: 186px;
         height: 186px;
+
         border-radius: 50%;
     }
 
@@ -47,16 +58,16 @@ export const Avatar = styled.div`
         width: 48px;
         height: 48px;
 
-        color: ${({ theme }) => theme.COLORS.ORANGE};
+        background-color: ${({ theme }) => theme.COLORS.CORAL};
         border-radius: 50%;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
 
         position: absolute;
         bottom: 7px;
         right: 7px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         cursor: pointer;
 
@@ -67,7 +78,7 @@ export const Avatar = styled.div`
         svg {
             width: 20px;
             height: 20px;
-            color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+            color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
         }
     }
     
