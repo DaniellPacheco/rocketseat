@@ -31,7 +31,7 @@ class MovieTagsController {
             user
         });   
 
-        response.status(201).json({
+        return response.status(201).json({
             message: "Tag successfully created",
             note: {
                 ...request.body
@@ -43,7 +43,7 @@ class MovieTagsController {
     async index(request, response) {
         const movieTags = await knex("movie_tags").select();
 
-        response.json(movieTags);
+        return response.json(movieTags);
     }
 
     async show(request, response) {
@@ -55,7 +55,7 @@ class MovieTagsController {
             throw new AppError("Tag not found");
         }
 
-        response.json(movieTag);
+        return response.json(movieTag);
     }
 
     async update(request, response) {
@@ -72,7 +72,7 @@ class MovieTagsController {
 
         await knex("movie_tags").update(movieTag);
         
-        response.json({
+        return response.json({
             message: "Tag has been updated",
             tag: {
                 ...movieTag
@@ -86,7 +86,7 @@ class MovieTagsController {
 
         await knex("movie_tags").where({ id }).delete();
 
-        response.json({
+        return response.json({
             message: "Tag has been deleted"
         })
     }

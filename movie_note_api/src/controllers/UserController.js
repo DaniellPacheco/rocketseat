@@ -78,7 +78,7 @@ class UserController {
             throw new AppError("User not found");
         }
 
-        response.json(user);
+        return response.json(user);
 
     }
 
@@ -127,7 +127,7 @@ class UserController {
         await knex("users").where({ id }).update(user);
 
         // mensagem avisando que usuario foi atualizado
-        response.json({message: "User is updated"});
+        return response.json({message: "User is updated"});
 
     }
 
@@ -137,7 +137,7 @@ class UserController {
 
         await knex("users").where({ id }).delete();
 
-        response.json({ message: "User deleted"});
+        return response.json({ message: "User deleted"});
 
     }
 
