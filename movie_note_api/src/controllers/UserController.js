@@ -86,11 +86,13 @@ class UserController {
 
         // pegar dados
         const { name, email, password, old_password, avatar } = request.body;
-        const { id } = request.params;
+
+        const user_id = request.user.id;
+        // const { id } = request.params;
 
         // verificar se o usuário existe
 
-        const [user] = await knex("users").where({ id });
+        const [user] = await knex("users").where({ user_id });
 
         if(!user) {
             throw new AppError("User not exists");
@@ -124,7 +126,7 @@ class UserController {
         user.avatar = avatar ?? user.avatar;
 
         // atualizar o usuario
-        await knex("users").where({ id }).update(user);
+        await knex("users").where({ user_id }).update(user);
 
         // mensagem avisando que usuario foi atualizado
         return response.json({message: "User is updated"});
