@@ -2,6 +2,7 @@ const { Router } = require('express');
 
 // chamo cotrollers para lidar com a requisição
 const UsersController = require("../controllers/UsersController");
+const ensureAuthenticated = require("../middlewares/ensureAuthenticated");
 
 const usersRoutes = Router();
 
@@ -35,7 +36,9 @@ const usersController = new UsersController();
  */
 // passo a função do objeto instanciada para a rota
 usersRoutes.post("/", myMiddleware, usersController.create);
-usersRoutes.put("/:id", usersController.update);
+// usersRoutes.put("/:id",  usersController.update);
+usersRoutes.put("/", ensureAuthenticated, usersController.update);
+
 
 /**
  * Route Params

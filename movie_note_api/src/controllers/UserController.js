@@ -87,7 +87,7 @@ class UserController {
         // pegar dados
         const { name, email, password, old_password, avatar } = request.body;
 
-        const user_id = request.user.id;
+        const user_id = request.user.id;;
         // const { id } = request.params;
 
         // verificar se o usuário existe
