@@ -1,11 +1,14 @@
 const { Router } = require('express');
+const multer = require("multer");
+const uploadConfig = require("../configs/upload");
 
 // chamo cotrollers para lidar com a requisição
 const UsersController = require("../controllers/UsersController");
+const UserAvatarController = require("../controllers/UserAvatarController");
 const ensureAuthenticated = require("../middlewares/ensureAuthenticated");
 
 const usersRoutes = Router();
-
+const upload = multer(uploadConfig.MULTER);
 
 function myMiddleware(request, response, next) {
   console.log("Você passou pelo Middleware!");
@@ -25,6 +28,7 @@ function myMiddleware(request, response, next) {
 
 // instancio o objeto
 const usersController = new UsersController();
+const userAvatarController = new UserAvatarController();
 
 /**
  * Fazer isso, você irá aplicar para todas as rotas
@@ -38,6 +42,7 @@ const usersController = new UsersController();
 usersRoutes.post("/", myMiddleware, usersController.create);
 // usersRoutes.put("/:id",  usersController.update);
 usersRoutes.put("/", ensureAuthenticated, usersController.update);
+usersRoutes.patch("/avatar", ensureAuthenticated, upload.single("avatar"), userAvatarController.update);
 
 
 /**

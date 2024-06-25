@@ -2,7 +2,9 @@
 require("express-async-errors");
 const migrationsRun = require("./database/sqlite/migrations");
 const AppError = require("./utils/AppError");
+const uploadConfig = require("./configs/upload");
 const express = require("express");
+const cors = require("cors");
 
 // não preciso deixar explicito index.js
 const routes = require("./routes");
@@ -12,8 +14,14 @@ migrationsRun();
 
 const app = express();
 
+// liberando requisições para o frontend
+app.use(cors());
+
 // Habilitando recebimento de requisição via JSON
 app.use(express.json());
+
+// Habiltiando o express para servir arquivo statico (imagem)
+app.use("/files", express.static(uploadConfig.UPLOADS_FOLDER));
 
 app.get("/", (request, response) => {
     response.send("Hello World");
