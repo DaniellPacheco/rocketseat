@@ -15,9 +15,9 @@ function myMiddleware(request, response, next) {
 
   // console.log(request.body);
 
-  if(!request.body.isAdmin) {
-    return response.status(401).json({message: "user unautherized"});
-  }
+  // if(!request.body.isAdmin) {
+  //   return response.status(401).json({message: "user unautherized"});
+  // }
 
   // next = destino (passa para a próxima função da pilha que neste caso é o usersController.create)
   next();
