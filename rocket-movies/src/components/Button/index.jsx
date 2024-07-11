@@ -3,7 +3,7 @@ import { Container } from './styles.js';
 
 export function Button({title, add = false, deleteBtn = false, ...rest}) {
     return (
-        <Container {...rest} deleteBtn={deleteBtn} to="/new">
+        <Container {...rest} deletebtn={deleteBtn.toString()}>
             { add ? <FiPlus /> : ''}
             {title}
         </Container>

@@ -12,6 +12,8 @@ export const Container = styled.div`
         'content'
     ;
 
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+
     > main {
         width: 1140px;
         margin: 0 auto;

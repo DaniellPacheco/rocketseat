@@ -52,7 +52,7 @@ export function Profile() {
 
     function handleBack() {
         navigate(-1); //o -1 faz com ele volte para a página anterior, a que o abriu
-      }
+    }
 
     return (
         <Container>
