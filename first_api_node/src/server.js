@@ -1,8 +1,13 @@
 // Configurando erro personalizado para isso usamos a lib express-async-errors
 require("express-async-errors");
+
+require("dotenv/config");
+
+const uploadConfig = require("./configs/upload");
+
 const migrationsRun = require("./database/sqlite/migrations");
 const AppError = require("./utils/AppError");
-const uploadConfig = require("./configs/upload");
+
 const express = require("express");
 const cors = require("cors");
 
@@ -52,5 +57,5 @@ app.use((error, request, response, next) => {
     });
 })
 
-const PORT = 3333;
+const PORT = process.env.PORT || 3333;
 app.listen(PORT, () => console.log(`Server is running on Port ${PORT}`));
